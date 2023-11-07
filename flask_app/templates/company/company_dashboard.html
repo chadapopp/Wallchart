@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="container text-center mt-4">Welcome {{ company.admin_name }}</h1>
+<h2 class="container text-center mt-4">Select Actions for {{company.company_name}}</h2>
+
+
+<div class="container mt-5 text-center">
+    <ul class="equipment-select row">
+        <li class="col-12 col-sm-6 col-md-4">
+            <a href="/users/all_users/{{company.id}}">
+            <div class="list-item-content p-5">Users</div></a>
+        </li>
+        <li class="col-12 col-sm-6 col-md-4">
+            <a href="/equipment/equipment_dashboard/{{company.id}}">
+            <div class="list-item-content p-5">Equipment</div></a>
+        </li>
+        <li class="col-12 col-sm-6 col-md-4">
+            <a href="/projects/dashboard/{{company.id}}">
+            <div class="list-item-content p-5">Projects</div></a>
+        </li>
+    </ul>
+
+
+
+
+{% endblock %}
+
+

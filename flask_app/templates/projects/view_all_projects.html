@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container welcome">
+    <h1>All {{company.company_name}} Projects</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Client Name</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        {% for project in projects %}
+        <tbody>
+            <tr>
+                <td>{{ project.project_name }}</td>
+                <td>{{ project.project_city }}</td>
+                <td> {{ project.project_state }} </td>
+                <td>{{ project.project_start_date }}</td>
+                <td>{{project.project_end_date}}</td>
+                <td>
+                    <a href="#" class="btn btn-success">View</a>
+                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <a href="/projects/create_project" class="btn btn-primary">Add Project</a>
+</div>
+
+{% endblock %}

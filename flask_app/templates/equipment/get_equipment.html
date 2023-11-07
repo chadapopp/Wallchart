@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container welcome">
+
+    <h1 class="text-center mb-5">{{ equipment_type }}</h1>
+    <table class="table"> 
+        <thead>
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Asset Number</th>
+                <th scope="col">Asset Name</th>
+                <th scope="col">Scope Of Work</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in equipment %}
+            <tr>
+                <td>{{ item.equipment_type }}</td>
+                <td>{{ item.equipment_number }}</td>
+                <td> {{item.equipment_name}} </td>
+                <td>{{item.scope_of_work}}</td>
+                <td>
+                    <a href="/equipment/edit_equipment/{{item.id}}" class="btn btn-primary mb-1">Edit</a><br>
+                    <a href="/equipment/delete_report" class="btn btn-danger">Delete</a><br>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

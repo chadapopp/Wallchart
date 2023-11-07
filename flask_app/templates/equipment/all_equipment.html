@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container welcome">
+    <h1>All Equipment</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Asset Number</th>
+                <th scope="col">Asset Name</th>
+                <th scope="col">Scope Of Work</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        {% for item in equipment %}
+        <tbody>
+            <tr>
+                <td>{{ item.equipment_type }}</td>
+                <td>{{ item.equipment_number }}</td>
+                <td> {{item.equipment_name}} </td>
+                <td>{{item.scope_of_work}}</td>
+                <td>
+                    <a href="/view_equipment" class="btn btn-success">View</a>
+                    <a href="/equipment/edit_equipment/{{item.id}}" class="btn btn-primary">Edit</a>
+                    <a href="/delete_equipment" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <a href="/equipment/create_equipment" class="btn btn-primary">Add equipment</a>
+</div>
+
+{% endblock %}

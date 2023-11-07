@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container mt-5">
+    <ul class="equipment-select row">
+        <li class="col-12 col-sm-6 col-md-4">
+            <a href="/equipment/view_all_equipment/{{company.id}}">
+                <div class="list-item-content">All Equipment</div>
+            </a>
+        </li>
+        <li class="col-12 col-sm-6 col-md-4">
+            <a href="/equipment/view_exchangers/{{company.id}}">
+                <div class="list-item-content">Exchangers</div>
+            </a>
+        </li>
+        <li class="col-12 col-sm-6 col-md-4">
+            <a href="/equipment/view_drums/{{company.id}}">
+                <div class="list-item-content">Drums</div>
+            </a> 
+        </li>
+        <li class="col-12 col-sm-6 col-md-4">
+            <a href="/equipment/view_tower_reactor/{{company.id}}">
+                <div class="list-item-content">Towers/Reactors</div>
+            </a>
+        </li>
+        <li class="col-12 col-sm-6 col-md-4">
+            <a href="/equipment/view_heaters/{{company.id}}">
+                <div class="list-item-content">Heaters</div>
+            </a>
+        </li>
+        <li class="col-12 col-sm-6 col-md-4">
+            <a href="/equipment/view_piping/{{company.id}}">
+                <div class="list-item-content">Piping</div>
+            </a>
+        </li>
+        </ul>
+</div>
+
+<div class="container text-center">
+    <a href="/logout" class="btn btn-warning"> Logout </a>
+    <a href="/equipment/create_equipment" class="btn btn-success">Add New Asset</a>
+    <a href="/equipment/view_all_equipment/{{company.id}}" class="btn btn-primary">View All My Reports</a>
+</div>
+
+{% endblock %}

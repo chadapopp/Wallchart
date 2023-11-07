@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="container text-center mt-4">Welcome {{session['admin_name']}}</h1>
+<h2 class="container text-center mt-4">Select Actions for {{company.company_name}}</h2>
+
+
+<div class="container mt-5 text-center">
+    <ul class="equipment-select row">
+        <li class="col-12 col-sm-6 col-md-4">
+            <a href="/projects/create_project">
+            <div class="list-item-content p-5">Create New Project</div></a>
+        </li>
+        <li class="col-12 col-sm-6 col-md-4">
+            <a href="/projects/view_all_projects/{{company.id}}">
+            <div class="list-item-content p-5">View All Projects</div></a>
+        </li>
+        <li class="col-12 col-sm-6 col-md-4">
+            <a href="#">
+            <div class="list-item-content p-5">Wall Charts</div></a>
+        </li>
+    </ul>
+
+{% endblock %}
